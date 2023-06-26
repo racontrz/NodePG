@@ -19,9 +19,8 @@ app.get('/posts', async (req, res) => {
 app.post('/posts', async (req, res) => { 
   const {titulo, img, descripcion, likes} = req.body;
   const result = await agregarPost(titulo, img, descripcion, likes);
-  res.send('Post agregado');
+  res.send(result);
 });
 
 app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
 });
